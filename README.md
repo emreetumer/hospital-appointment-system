@@ -10,7 +10,7 @@
 
 *Clean Architecture prensipleri ve modern .NET teknolojileriyle geliştirilmiş, ölçeklenebilir bir hastane randevu yönetim sistemi.*
 
-[Özellikler](#-temel-özellikler) • [Teknolojiler](#-teknoloji-stack) • [Mimari](#-mimari-yapı) • [Kurulum](#-kurulum) • [API Kullanımı](#-api-kullanımı)
+[Özellikler](#-temel-özellikler) • [Teknolojiler](#-teknoloji-stack) • [Mimari](#-mimari-yapı) • [Kurulum](#-kurulum)
 
 </div>
 
@@ -23,7 +23,7 @@
 - [Mimari Yapı](#-mimari-yapı)
 - [Proje Yapısı](#-proje-yapısı)
 - [Kurulum](#-kurulum)
-- [Veritabanı Kurulumu](#-veritabanı-kurulumu)
+- [Veritabanı Şeması](#-veritabanı-şeması)
 - [API Kullanımı](#-api-kullanımı)
 - [Test](#-test)
 - [Katkıda Bulunma](#-katkıda-bulunma)
@@ -285,11 +285,9 @@ https://localhost:7xxx/swagger
 http://localhost:5xxx/swagger
 ```
 
-## 🗄️ Veritabanı Kurulumu
+## 🗄️ Veritabanı Şeması
 
-### 📊 Veritabanı Şeması
-
-#### Tablolar:
+### 📊 Tablolar:
 1. **Users** - Tüm kullanıcılar (Admin, Doctor, Patient)
 2. **Departments** - Hastane departmanları
 3. **Doctors** - Doktor bilgileri ve uzmanlıkları
@@ -549,119 +547,3 @@ Bu projeyi geliştirirken aşağıdaki kaynaklardan ilham alınmıştır:
 Made with ❤️ using .NET 8
 
 </div>
-- **Presentation Layer**: API endpoints
-
-#### 2. Dapper (Micro ORM)
-- Raw SQL queries
-- Parameterized queries
-- Multi-mapping (JOIN operations)
-- Async operations
-
-```csharp
-// �rnek Dapper kullan�m�
-var query = "SELECT * FROM Users WHERE Id = @Id";
-var user = await connection.QuerySingleOrDefaultAsync<User>(query, new { Id = id });
-```
-
-#### 3. CQRS Pattern
-- Command ve Query separation
-- MediatR library kullan�m�
-- Handler pattern
-
-#### 4. Authentication & Authorization
-- JWT token generation
-- Token validation
-- Role-based authorization
-- BCrypt password hashing
-
-#### 5. Validation
-- FluentValidation
-- Input validation
-- Business rule validation
-
-#### 6. Global Exception Handling
-- Middleware pattern
-- Centralized error handling
-- Structured error responses
-
-#### 7. Logging
-- Serilog integration
-- Structured logging
-- File logging
-
-## ?? Test Etme
-
-### Swagger UI ile Test
-1. Projeyi �al��t�r�n
-2. Taray�c�da `https://localhost:xxxx` adresine gidin
-3. `/api/auth/login` endpoint'ini kullanarak token al�n
-4. "Authorize" butonuna t�klay�n ve token'� yap��t�r�n
-5. Di�er endpoint'leri test edin
-
-### Postman ile Test
-1. Postman'i a��n
-2. Collection olu�turun
-3. Environment variable olarak `{{token}}` ekleyin
-4. Login yapt�ktan sonra token'� environment variable'a kaydedin
-5. Di�er request'lerde `Authorization: Bearer {{token}}` kullan�n
-
-## ??? Geli�tirme �nerileri
-
-Projeyi daha da geli�tirmek i�in:
-
-### Yeni �zellikler:
-- ? Randevu iptal etme
-- ? Randevu g�ncelleme
-- ? Doktor m�saitlik takvimi
-- ? Email bildirimleri
-- ? SMS bildirimleri
-- ? T�bbi rapor y�kleme
-- ? Hasta ge�mi�i g�r�nt�leme
-- ? Admin panel
-
-### Teknik �yile�tirmeler:
-- ? Unit testing (xUnit)
-- ? Integration testing
-- ? Redis caching
-- ? Rate limiting
-- ? API versioning
-- ? Background jobs (Hangfire)
-- ? SignalR (Real-time notifications)
-
-## ?? Notlar
-
-### G�venlik
-- **Production'da mutlaka yap�lmas� gerekenler:**
-  - JWT SecretKey'i environment variable'dan al
-  - HTTPS kullan
-  - Rate limiting ekle
-  - Input sanitization
-  - SQL injection korumas� (Dapper zaten koruyor)
-
-### Performance
-- Indexler do�ru kullan�ld�
-- Async/await pattern kullan�ld�
-- Connection pooling (SQL Server default)
-- Dapper zaten performansl�
-
-### Best Practices
-- Clean Code principles
-- SOLID principles
-- DRY (Don't Repeat Yourself)
-- Single Responsibility
-- Dependency Injection
-
-## ?? Katk�da Bulunma
-
-Bu bir e�itim projesidir. ��renme ama�l� geli�tirilmi�tir.
-
-## ?? Lisans
-
-MIT License - E�itim ama�l� kullan�m i�in �zg�rd�r.
-
----
-
-**Geli�tirici Notu:**
-Bu proje modern .NET development pratiklerini ��renmek i�in tasarlanm��t�r. Her katman (Domain, Application, Infrastructure, API) net bir �ekilde ayr�lm��t�r ve ba��ml�l�klar do�ru y�ndedir. Dapper kullan�m� sayesinde hem performansl� hem de kontrol edilebilir bir data access layer elde edilmi�tir.
-
-**Ba�ar�lar! ??**
