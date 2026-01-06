@@ -6,7 +6,6 @@
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?style=for-the-badge&logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 *Clean Architecture prensipleri ve modern .NET teknolojileriyle geliştirilmiş, ölçeklenebilir bir hastane randevu yönetim sistemi.*
 
@@ -27,7 +26,6 @@
 - [API Kullanımı](#-api-kullanımı)
 - [Test](#-test)
 - [Katkıda Bulunma](#-katkıda-bulunma)
-- [Lisans](#-lisans)
 
 ## ✨ Temel Özellikler
 
@@ -521,15 +519,6 @@ test: Test ekleme veya düzeltme
 chore: Genel bakım işleri
 ```
 
-## 📝 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## 👨‍💻 Geliştirici
-
-**Emre**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
 
 ## 🙏 Teşekkürler
 
